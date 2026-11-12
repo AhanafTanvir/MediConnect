@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  --med-green: #16A878;
+  --med-green-dark: #11835D;
+  --med-green-light: #E8F8F2;
+  --med-green-muted: #D1F2E5;
+  
+  --med-blue: #2878D0;
+  --med-blue-dark: #1E5EA4;
+  --med-blue-light: #EFF6FF;
+  
+  --med-border: #E2E8F0;
+  --med-card: #FFFFFF;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom clinical ecosystem utilities */
+.bg-med-green {
+  background-color: var(--med-green);
+}
+.bg-med-green-dark {
+  background-color: var(--med-green-dark);
+}
+.bg-med-green-light {
+  background-color: var(--med-green-light);
+}
+.text-med-green {
+  color: var(--med-green);
+}
+.text-med-green-dark {
+  color: var(--med-green-dark);
+}
+.border-med-green {
+  border-color: var(--med-green);
+}
+
+.bg-med-blue {
+  background-color: var(--med-blue);
+}
+.bg-med-blue-dark {
+  background-color: var(--med-blue-dark);
+}
+.bg-med-blue-light {
+  background-color: var(--med-blue-light);
+}
+.text-med-blue {
+  color: var(--med-blue);
+}
+.border-med-blue {
+  border-color: var(--med-blue);
+}
+
+/* Smooth live pulse */
+@keyframes clinicalPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+
+.animate-clinical-pulse {
+  animation: clinicalPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar for clinical dashboards */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
